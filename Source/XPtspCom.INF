@@ -1,0 +1,75 @@
+[Version]
+Signature=$Windows NT$
+
+[Optional Components]
+XPtspCom
+
+[XPtspCom]
+OptionDesc   = "XPtsp Settings"
+Tip          = "Contains all MD5 hashes, file information, and settings used to integrate this copy of XP."
+Modes        = 0,1,2,3
+AddReg       = XPtsp.AddReg
+DelReg       = Wallpaper.DelReg
+
+[XPtsp.AddReg]
+; XPtsp Patcher Settings:
+HKCU,"%PROGRAM%","ThemeFile",,"%1%\i386\SVCPACK\%Theme%.xptsp"
+HKCU,"%PROGRAM%","Theme",,"%Theme%"
+HKCU,"%PROGRAM%","BootScr",,"%BootScr%"
+HKCU,"%PROGRAM%","TaskMgr",,"%TaskMgr%"
+HKCU,"%PROGRAM%","Language",,"%Lang%"
+HKCU,"%PROGRAM%","Palette",,"%Palette%"
+HKCU,"%PROGRAM%","OemGen",,"%OemGen%"
+HKCU,"%PROGRAM%","Full_Pack",,"%Full_Pack%"
+
+; Remove the setup wallpaper installed by XPtsp GUI:
+[Wallpaper.DelReg]
+HKCU,"Control Panel\Desktop","Wallpaper",0x00000000,"%SystemRoot%\System32\xptsporb.bmp"
+
+[Shortcut]
+ProfileItems = Repatch.Shortcut, Visit.Shortcut, Uninstall.Shortcut, Modify.Shortcut
+
+[Repatch.Shortcut]
+Name	   = "Repatch Icons"
+CmdLine	   = 16422,"%Folder%",XPtsp.exe /REPATCH
+SubDir	   = "%Shortcut%"
+InfoTip	   = "%Comment%"
+WorkingDir = 16422,"%Folder%"
+
+[Modify.Shortcut]
+Name	   = "Modify XPtsp"
+CmdLine	   = 16422,"%Folder%",XPtsp.exe /MODIFY
+SubDir	   = "%Shortcut%"
+InfoTip	   = "Modify which resources are installed on this computer"
+WorkingDir = 16422,"%Folder%"
+
+[Uninstall.Shortcut]
+Name	   = "Uninstall XPtsp"
+CmdLine	   = 16422,"%Folder%",XPtsp.exe /UNINSTALL
+SubDir	   = "%Shortcut%"
+InfoTip	   = "Remove XPtsp from this computer"
+WorkingDir = 16422,"%Folder%"
+
+[Visit.Shortcut]
+Name       = "Visit XPtsp Forum"
+SubDir	   = "%Shortcut%"
+URL        = "http://www.wincert.net/forum/index.php?showforum=178#"
+IconPath   = 16422,%IE%,IEXPLORE.EXE
+IconIndex  = 1
+
+[Strings]
+SHORTCUT  = "XP Theme Source Patcher"
+COMMENT   = "Patches/Overwrites default Windows XP resources"
+PROGRAM	  = "SOFTWARE\XPtsp\Settings"
+Folder    = "XPtsp"
+Built_By  = ""
+Theme     = ""
+TaskMgr   = ""
+BootScr   = ""
+Lang      = ""
+Palette   = ""
+OemGen    = ""
+Full_Pack = ""
+
+; MD5 hash of resources used per file:
+[Pro]

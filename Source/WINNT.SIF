@@ -1,0 +1,13 @@
+[Data]
+MSDosInitiated=0
+UnattendedInstall=Yes
+AutoPartition=0
+
+[UserData]
+
+[Unattended]
+Repartition=No
+FileSystem=*
+WaitForReboot=No
+DriverSigningPolicy=Ignore
+NonDriverSigningPolicy=Ignore

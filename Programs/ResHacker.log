@@ -1,0 +1,6 @@
+[08 Sep 2012, 11:18:14]
+D:\XPtsp\Programs\ResHacker  -addoverwrite "XPtsp_v3.0.0.27_GUI.exe", "XPtsp_v3.0.0.27_GUI.exe", "D:\XPtsp\Version.res",,,
+  Added: ICONGROUP,101,1033
+  Modified: VERSIONINFO,1,1033
+
+Commands completed

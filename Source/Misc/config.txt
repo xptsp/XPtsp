@@ -1,0 +1,8 @@
+﻿;!@Install@!UTF-8!
+GUIFlags="56"
+Title="XP Theme Source Patcher"
+ExtractDialogText="Preparing to run the XP Theme Source Patcher"
+HelpText="Quick Command-Line Summary:\n  /PASSIVE = Performs unattended installation of XPtsp.\n  /S = Performs unattended installation of XPtsp.\n  /SILENT = Performs unattended installation of XPtsp.\n  /NOREBOOT = Does not reboot the computer.\n  /REBOOT = Automatically reboots the computer upon completion.\n\nXP Source Integration:\n  /INTEGRATE = Performs unattended XP source integration\n  /INTEGRATE:[n] = Same as above, but specifies [n] as XP source folder.\n\nFor more information, please visit the XPtsp forum."
+SetEnvironment="InstallDir=%%S"
+ExecuteFile="XPtsp.exe"
+;!@InstallEnd@!
